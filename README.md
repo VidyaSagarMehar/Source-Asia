@@ -182,6 +182,22 @@ Because the script runs atomically in Redis, simultaneous requests cannot bypass
    - `LOG_LEVEL`
 4. Deploy worker separately (container, VM, or serverless worker environment) because BullMQ workers should run as long-lived processes.
 
+### Render worker deployment
+
+This repository includes `render.yaml` for a Render Background Worker:
+
+- Service type: `worker`
+- Build command: `npm install`
+- Start command: `npm run worker`
+- Environment variables are defined in `render.yaml` (set `REDIS_URL` securely in Render dashboard).
+
+To deploy on Render:
+
+1. Create a new Blueprint deployment from this repository.
+2. Select the generated worker service.
+3. Add the actual `REDIS_URL` value in Render environment settings.
+4. Deploy and verify logs contain `Rate-limit retry worker is ready`.
+
 ## Folder Structure
 
 ```text

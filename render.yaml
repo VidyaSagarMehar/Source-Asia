@@ -1,0 +1,21 @@
+services:
+  - type: worker
+    name: source-asia-rate-limit-worker
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run worker
+    autoDeploy: true
+    envVars:
+      - key: REDIS_URL
+        sync: false
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: "5"
+      - key: RATE_LIMIT_WINDOW_SECONDS
+        value: "60"
+      - key: ENABLE_RETRY_QUEUE
+        value: "true"
+      - key: REQUEST_QUEUE_NAME
+        value: rate-limit-retry
+      - key: LOG_LEVEL
+        value: info
