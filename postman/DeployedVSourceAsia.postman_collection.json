@@ -1,0 +1,89 @@
+{
+  "info": {
+    "name": "SourceAsiaDeplyedV",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "3f3bf6fa-ea87-49d5-931e-7a2663db395b",
+      "name": "GetUserStat",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/stats?user_id=demo-user-2",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "stats"
+          ],
+          "query": [
+            {
+              "key": "user_id",
+              "value": "demo-user-2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "114527f0-623b-4d23-98f8-4e64917f5cad",
+      "name": "GetUsersStats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/stats",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "stats"
+          ]
+        }
+      }
+    },
+    {
+      "id": "f3827e5d-12a1-4e1e-b437-d4436ee3dcae",
+      "name": "PostUserStat",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "content-type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/request",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "request"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": \"demo-user-3\",\n  \"payload\": {\n    \"event\": \"checkout\",\n    \"items\": 3,\n    \"source\": \"postman\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://source-asia.vercel.app",
+      "type": "string"
+    }
+  ]
+}
