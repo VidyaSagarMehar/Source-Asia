@@ -1,0 +1,91 @@
+{
+  "info": {
+    "name": "SourceAsia",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "4a642ab9-cbc8-4cdf-a42f-87cf31047cb4",
+      "name": "GetUserStat",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/stats?user_id=demo-user-2",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "stats"
+          ],
+          "query": [
+            {
+              "key": "user_id",
+              "value": "demo-user-2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "8e596ad5-1ba2-44ef-838d-3fff96090ecf",
+      "name": "GetUsersStats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/stats",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "stats"
+          ]
+        }
+      }
+    },
+    {
+      "id": "e5232d18-48b2-4ae7-a6ae-f751c7723494",
+      "name": "PostUserStat",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "content-type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/request",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "request"
+          ],
+          "port": "3000"
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": \"demo-user-2\",\n  \"payload\": {\n    \"event\": \"checkout\",\n    \"items\": 3,\n    \"source\": \"postman\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}

@@ -206,7 +206,29 @@ utils/
   http.ts
 workers/
   rateLimitRetryWorker.ts
+postman/
+  SourceAsia.postman_collection.json
 ```
+
+## Postman Collection
+
+A ready-to-use Postman collection is included for quick API verification:
+
+- `postman/SourceAsia.postman_collection.json`
+
+How to use:
+
+1. Open Postman and click **Import**.
+2. Select `postman/SourceAsia.postman_collection.json`.
+3. Create an environment variable `baseUrl` with value `http://localhost:3000`.
+4. Run requests from the collection using `{{baseUrl}}`.
+
+The collection covers:
+
+- Valid `POST /api/request`
+- Rate-limited `POST /api/request` scenario
+- `GET /api/stats`
+- `GET /api/stats?user_id=...`
 
 ## Test / Verification Commands
 
